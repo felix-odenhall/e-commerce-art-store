@@ -1,0 +1,12 @@
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{
+    "_id": "item2",
+    "url": "https://made-up.com/image.jpg",
+    "title": "image 2",
+    "isAvailable": false
+}
+
+### Get posts
+GET http://localhost:8080/products
