@@ -2,10 +2,13 @@ POST http://localhost:8080/products
 Content-Type: application/json
 
 {
-    "_id": "item2",
-    "url": "https://made-up.com/image.jpg",
+    "_id": "itemX",
+    "image": "https://made-up.com/image.jpg",
     "title": "image 2",
-    "isAvailable": false
+    "type": "environment",
+    "isAvailable": true,
+    "isPacked": false,
+    "isShipped": false
 }
 
 ### Get posts
