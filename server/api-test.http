@@ -2,8 +2,8 @@ POST http://localhost:8080/products
 Content-Type: application/json
 
 {
-    "_id": "itemX",
-    "image": "https://made-up.com/image.jpg",
+    "_id": "itemY",
+    "image": "..//assets/images/felix_odenhall.jpg",
     "title": "image 2",
     "type": "environment",
     "isAvailable": true,
