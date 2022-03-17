@@ -1,8 +1,10 @@
 import './_App.scss';
 // import Button from './components/Button/Button';
-import Home from './pages/Home';
-import Products from './pages/Products';
-import Contact from './pages/Contact';
+
+import { Home, Products, Contact } from './pages';
+
+import { Routes, Route } from 'react-router-dom';
+
 import { useEffect, useState } from 'react';
 import * as config from './Config';
 
@@ -19,17 +21,20 @@ function App() {
       })
       .then((result) => {
         setItems(result);
-        console.log(products);
       })
       .catch((err) => {
         console.error(err);
       });
   }, []);
   return (
-    <>
-      <h2>Home</h2>
-      <h1>lol</h1>
-    </>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products products={products} />} />
+        <Route path="/contact" element={<Contact />} />
+        {/* <Route path="*" element="404 Page" /> */}
+      </Routes>
+    </div>
   );
 }
 
