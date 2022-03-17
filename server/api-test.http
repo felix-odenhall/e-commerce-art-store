@@ -2,9 +2,9 @@ POST http://localhost:8080/products
 Content-Type: application/json
 
 {
-    "_id": "itemY",
-    "image": "..//assets/images/felix_odenhall.jpg",
-    "title": "image 2",
+    "_id": "itemX",
+    "image": "..//assets/images/castle.png",
+    "title": "Moonlight Castle",
     "type": "environment",
     "isAvailable": true,
     "isPacked": false,
