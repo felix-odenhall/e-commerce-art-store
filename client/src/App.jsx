@@ -1,41 +1,10 @@
 import './_App.scss';
 // import Button from './components/Button/Button';
-import ProductCard from './components/ProductCard/ProductCard';
+import Home from './pages/Home';
+import Products from './pages/Products';
+import Contact from './pages/Contact';
 import { useEffect, useState } from 'react';
 import * as config from './Config';
-
-// const products = [
-//   {
-//     id: 'product1',
-//     image: 'https://made-up.com/image.jpg',
-//     title: 'Product 1',
-//     description: 'Product Name 1',
-//   },
-//   {
-//     id: 'product2',
-//     image: 'https://made-up.com/image.jpg',
-//     title: 'Product 2',
-//     description: 'Product Name 2',
-//   },
-//   {
-//     id: 'product3',
-//     image: 'https://made-up.com/image.jpg',
-//     title: 'Product 3',
-//     description: 'Product Name 3',
-//   },
-//   {
-//     id: 'product4',
-//     image: 'https://made-up.com/image.jpg',
-//     title: 'Product 4',
-//     description: 'Product Name 4',
-//   },
-//   {
-//     id: 'product5',
-//     image: 'https://made-up.com/image.jpg',
-//     title: 'Product 5',
-//     description: 'Product Name 5',
-//   },
-// ];
 
 function App() {
   const [products, setItems] = useState([]);
@@ -58,16 +27,8 @@ function App() {
   }, []);
   return (
     <>
-      <section className="container">
-        {products.map((product) => (
-          <ProductCard
-            key={product._id}
-            title={product.title}
-            image={product.image}
-            type={product.type}
-          />
-        ))}
-      </section>
+      <h2>Home</h2>
+      <h1>lol</h1>
     </>
   );
 }
