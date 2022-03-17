@@ -1,4 +1,4 @@
-import './ProductCard.css';
+import './_ProductCard.scss';
 import Button from '../Button/Button';
 
 const ProductCard = ({ _id, image, title, type }) => {

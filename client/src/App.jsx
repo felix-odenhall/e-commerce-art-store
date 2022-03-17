@@ -1,4 +1,4 @@
-import './App.css';
+import './_App.scss';
 // import Button from './components/Button/Button';
 import ProductCard from './components/ProductCard/ProductCard';
 import { useEffect, useState } from 'react';
