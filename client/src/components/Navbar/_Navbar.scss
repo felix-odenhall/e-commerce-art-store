@@ -1,8 +1,13 @@
 @import '../client/src/styles/_variables.scss';
 
+li {
+  list-style-type: none;
+}
+
 a {
   color: $base-color;
   list-style: none;
+  text-decoration: none;
   &:visited {
     color: $base-color2;
   }
