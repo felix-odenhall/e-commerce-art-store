@@ -1,4 +1,5 @@
 import './_Navbar.scss';
+import { FaShoppingCart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -13,6 +14,11 @@ const Navbar = () => {
         </li>
         <li>
           <Link to="/contact">Contact</Link>
+        </li>
+        <li>
+          <Link to="/contact">
+            <FaShoppingCart />
+          </Link>
         </li>
       </div>
     </nav>

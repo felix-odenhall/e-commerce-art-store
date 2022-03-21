@@ -1,0 +1,9 @@
+@import '../client/src/styles/_variables.scss';
+
+a {
+  color: $base-color;
+  list-style: none;
+  &:visited {
+    color: $base-color2;
+  }
+}
