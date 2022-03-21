@@ -1,10 +1,22 @@
 import Navbar from '../components/Navbar/Navbar';
+import ProductCard from '../components/ProductCard/ProductCard';
 
-const Home = () => {
+import { useEffect, useState } from 'react';
+
+const Home = ({ products }) => {
   return (
     <>
       <Navbar />
-      <h1>Home</h1>
+      <section className="container">
+        {products.map((product) => (
+          <ProductCard
+            key={product._id}
+            title={product.title}
+            image={product.image}
+            type={product.type}
+          />
+        ))}
+      </section>
     </>
   );
 };

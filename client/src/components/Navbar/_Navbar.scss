@@ -1,14 +1,50 @@
 @import '../client/src/styles/_variables.scss';
 
-li {
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   list-style-type: none;
-}
+  padding: 1rem;
+  background-color: beige;
 
-a {
-  color: $base-color;
-  list-style: none;
-  text-decoration: none;
-  &:visited {
-    color: $base-color2;
+  &__logo {
+    color: red;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    &__link {
+      text-decoration: none;
+      color: red;
+      margin: 1rem;
+      &:hover,
+      &:focus {
+        color: $hover-color;
+        text-decoration: underline;
+      }
+    }
+  }
+  &__cart__icon {
+    font-size: 1.5rem;
+    color: green;
+    &:hover,
+    &:focus {
+      color: $hover-color;
+    }
   }
 }
+
+// a {
+//   color: $base-color;
+//   list-style: none;
+//   text-decoration: none;
+//   &:visited {
+//     color: $base-color2;
+//   }
+// }

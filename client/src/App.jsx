@@ -1,7 +1,7 @@
 import './_App.scss';
 // import Button from './components/Button/Button';
 
-import { Home, Products, Contact } from './pages';
+import { Home, Products, About } from './pages';
 
 import { Routes, Route } from 'react-router-dom';
 
@@ -29,9 +29,9 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home products={products} />} />
         <Route path="/products" element={<Products products={products} />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
         {/* <Route path="*" element="404 Page" /> */}
       </Routes>
     </div>

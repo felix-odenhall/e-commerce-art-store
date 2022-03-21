@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar/Navbar';
 
-const Contact = () => {
+const About = () => {
   return (
     <>
       <Navbar />
@@ -11,4 +11,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default About;
