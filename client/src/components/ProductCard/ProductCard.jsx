@@ -1,18 +1,20 @@
 import './_ProductCard.scss';
-import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
 
-const ProductCard = ({ _id, image, title, type }) => {
+const ProductCard = ({ _id, image, title, type, price }) => {
   return (
-    <div className="card-container">
-      <img
-        className="product-img"
-        src={image}
-        alt="A pricture of the art work"
-      />
-      <h3>{title ? title : 'Coming soon'}</h3>
-      <p>{type ? type : ''}</p>
-      <Button style="btn-yes" title="buy" />
-    </div>
+    <Link to={`/product/${_id}`}>
+      <div className="card-container">
+        <img
+          className="product-img"
+          src={image}
+          alt="A pricture of the art work"
+        />
+        <h3>{title ? title : 'Coming soon'}</h3>
+        <p>{type ? type : ''}</p>
+        <p>${price ? price : 'Pricless'}</p>
+      </div>
+    </Link>
   );
 };
 

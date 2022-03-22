@@ -12,11 +12,11 @@ const Navbar = () => {
             Home
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link className="navbar__list__link" to="/products">
             Products
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link className="navbar__list__link" to="/about">
             About
