@@ -1,9 +1,27 @@
+import { ObjectId } from 'mongodb';
 import { collection } from '../database/mongodb.js';
 
 // GET
 const getProduct = async (req, res) => {
   const product = await collection.products.find().toArray();
 
+  res.status(200).json(product);
+};
+
+//GET SEARCH
+const getProductByQuery = async (req, res) => {
+  const query = req.params.query;
+  const product = await collection.products
+    .find({ title: { $regex: `${query}`, $options: 'i' } })
+    .toArray();
+
+  res.status(200).json(product);
+};
+//GET PRODUCT BY ID
+
+const getProductById = async (req, res) => {
+  const id = req.params.id;
+  const product = await collection.products.findOne({ _id: new ObjectId(id) });
   res.status(200).json(product);
 };
 
@@ -45,4 +63,4 @@ const setProduct = async (req, res) => {
 //   res.status(200).json({ message: `Delete goal ${req.params.id}` });
 // };
 
-export { getProduct, setProduct };
+export { getProduct, setProduct, getProductByQuery, getProductById };
