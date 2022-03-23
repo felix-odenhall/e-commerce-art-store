@@ -2,11 +2,10 @@ POST http://localhost:8080/products
 Content-Type: application/json
 
 {
-    "_id": "item2",
-    "image": "..//assets/images/felix_odenhall.jpg",
-    "title": "Epic fighter",
-    "type": "character",
-    "price": 700,
+    "image": "..//assets/images/castle.png",
+    "title": "Moonlight Castle",
+    "category": "envirorment",
+    "price": 100,
     "isAvailable": true,
     "isPacked": false,
     "isShipped": false
