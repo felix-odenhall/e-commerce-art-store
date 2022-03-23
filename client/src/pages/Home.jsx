@@ -33,22 +33,27 @@ const Home = () => {
         console.error(err);
       });
   }, [query]);
+  console.log(products);
 
   return (
     <>
       <Navbar />
       <Search setQuery={setQuery} />
       <section className="container">
-        {products.map((product) => (
-          <ProductCard
-            key={product._id}
-            _id={product._id}
-            title={product.title}
-            image={product.image}
-            type={product.type}
-            price={product.price}
-          />
-        ))}
+        {products.length > 0 ? (
+          products.map((product) => (
+            <ProductCard
+              key={product._id}
+              _id={product._id}
+              title={product.title}
+              image={product.image}
+              type={product.type}
+              price={product.price}
+            />
+          ))
+        ) : (
+          <h1>There are no such thing</h1>
+        )}
       </section>
     </>
   );

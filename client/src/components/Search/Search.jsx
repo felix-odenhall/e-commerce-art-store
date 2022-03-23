@@ -7,6 +7,7 @@ const Search = ({ setQuery }) => {
   const handleSubmit = (el) => {
     el.preventDefault();
     setQuery(searchInput);
+    setSearchInput('');
   };
   const handleOnChange = (el) => {
     setSearchInput(el.target.value);
