@@ -1,6 +1,4 @@
-import ProductCard from '../components/ProductCard/ProductCard';
 import '../components/ProductCard/_ProductCard.scss';
-import Button from '../components/Button/Button';
 import Navbar from '../components/Navbar/Navbar';
 
 import { useEffect, useState } from 'react';
@@ -15,8 +13,8 @@ const Product = ({ products }) => {
       <img src={product[0].image} alt="" />
       <h3>{product[0].title}</h3>
       <div className="btn-container">
-        <Button style="btn-add" title="Add to cart" />
-        <Button style="btn-buy" title="Buy" />
+        <button>Add to cart</button>
+        <button>Buy</button>
       </div>
       {/* <section className="container">
         <ProductCard

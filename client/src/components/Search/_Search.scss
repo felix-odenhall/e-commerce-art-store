@@ -1,0 +1,15 @@
+.search {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  &__filter {
+    display: flex;
+    flex-direction: row;
+    input,
+    label {
+      margin: 0 0 1rem 1rem;
+    }
+  }
+}

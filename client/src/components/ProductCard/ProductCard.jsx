@@ -1,4 +1,5 @@
 import './_ProductCard.scss';
+
 import { Link } from 'react-router-dom';
 
 const ProductCard = ({ _id, image, title, type, price }) => {
@@ -13,6 +14,8 @@ const ProductCard = ({ _id, image, title, type, price }) => {
         <h3>{title ? title : 'Coming soon'}</h3>
         <p>{type ? type : ''}</p>
         <p>${price ? price : 'Pricless'}</p>
+
+        <button>Buy</button>
       </div>
     </Link>
   );
