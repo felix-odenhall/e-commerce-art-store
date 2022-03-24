@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const Product = () => {
-  const [fetchedProduct, setfetchedProduct] = useState('');
+  const [fetchedProduct, setFetchedProduct] = useState('');
   const { id } = useParams();
   useEffect(() => {
     fetch(`${config.API_BASE_URL}/products/product/${id}`)
@@ -14,7 +14,7 @@ const Product = () => {
         return response.json();
       })
       .then((result) => {
-        setfetchedProduct(result);
+        setFetchedProduct(result);
       })
       .catch((err) => {
         console.error(err);

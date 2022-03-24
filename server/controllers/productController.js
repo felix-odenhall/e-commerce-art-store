@@ -25,6 +25,14 @@ const getProductById = async (req, res) => {
   res.status(200).json(product);
 };
 
+//GET PRODUCT BY ID
+
+const getProductByCategory = async (req, res) => {
+  const category = req.params.id;
+  const product = await collection.products.findOne();
+  res.status(200).json(category);
+};
+
 // POST
 // const setProduct = (req, res) => {
 //   if (!req.body.text) {

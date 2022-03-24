@@ -52,7 +52,7 @@ const Home = () => {
             />
           ))
         ) : (
-          <h1>There are no such thing</h1>
+          <h2>There are no matches for (---input---)</h2>
         )}
       </section>
     </>
