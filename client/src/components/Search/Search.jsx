@@ -2,7 +2,7 @@ import './_Search.scss';
 import { FaSistrix } from 'react-icons/fa';
 import { useState } from 'react';
 
-const Search = ({ setQuery }) => {
+const Search = ({ setQuery, setCategory }) => {
   const [searchInput, setSearchInput] = useState('');
   const handleSubmit = (el) => {
     el.preventDefault();
@@ -15,8 +15,10 @@ const Search = ({ setQuery }) => {
   const handleOnChangeCheck = (el) => {
     const checked = el.target.checked;
     const categoryName = el.target.id;
-    if (checked) console.log(`${categoryName} is checked`);
-    else console.log(`${categoryName} is unchecked`);
+    if (checked) {
+      setCategory(categoryName);
+      console.log(`${categoryName} is checked`);
+    } else console.log(`${categoryName} is unchecked`);
     console.log(checked);
   };
   return (
@@ -35,7 +37,7 @@ const Search = ({ setQuery }) => {
           id="character"
           name="search__filter__item"
           value="character"
-          onChange={(e) => handleOnChangeCheck(e)}
+          onChange={handleOnChangeCheck}
         ></input>
         <label htmlFor="character">Characters</label>
       </div>

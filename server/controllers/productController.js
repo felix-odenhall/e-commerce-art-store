@@ -1,12 +1,40 @@
 import { ObjectId } from 'mongodb';
 import { collection } from '../database/mongodb.js';
 
+//GetProductS query and category
+
 // GET
 const getProduct = async (req, res) => {
-  const product = await collection.products.find().toArray();
+  const query = req.query;
+  console.log(query);
+  let filter = {};
+  if (query.title) {
+    filter.title = { $regex: new RegExp(query.title, 'i') };
+  }
+  if (query.category) {
+    filter.category = { $regex: new RegExp(query.category, 'i') };
+  }
 
+  const product = await collection.products.find(filter).toArray();
+  console.log(filter);
+  console.log(product);
   res.status(200).json(product);
 };
+
+//   const query = req.query;
+//   console.log('Query', query);
+//   let filter = {};
+//   if (query.containsPuppy) {
+//     filter.containsPuppy = query.containsPuppy === 'true';
+//   }
+//   if (query.breed) {
+//     filter.breed = { $regex: new RegExp(query.breed, 'i') };
+//   }
+
+//   console.log('Filter', filter);
+//   const dogs = await collection.find(filter).toArray();
+
+//   res.json(dogs);
 
 //GET SEARCH
 const getProductByQuery = async (req, res) => {
@@ -14,7 +42,7 @@ const getProductByQuery = async (req, res) => {
   const product = await collection.products
     .find({ title: { $regex: `${query}`, $options: 'i' } })
     .toArray();
-
+  console.log(product);
   res.status(200).json(product);
 };
 //GET PRODUCT BY ID
@@ -28,9 +56,12 @@ const getProductById = async (req, res) => {
 //GET PRODUCT BY ID
 
 const getProductByCategory = async (req, res) => {
-  const category = req.params.id;
-  const product = await collection.products.findOne();
-  res.status(200).json(category);
+  const category = req.params.category;
+  console.log(category);
+  const products = await collection.products
+    .find({ category: `${category}` })
+    .toArray();
+  res.status(200).json(products);
 };
 
 // POST
@@ -71,4 +102,10 @@ const setProduct = async (req, res) => {
 //   res.status(200).json({ message: `Delete goal ${req.params.id}` });
 // };
 
-export { getProduct, setProduct, getProductByQuery, getProductById };
+export {
+  getProduct,
+  setProduct,
+  getProductByQuery,
+  getProductById,
+  getProductByCategory,
+};

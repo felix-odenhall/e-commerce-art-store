@@ -7,7 +7,8 @@ import * as config from '../Config';
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [query, setQuery] = useState('');
-
+  const [category, setCategory] = useState('');
+  console.log(category);
   useEffect(() => {
     fetch(`${config.API_BASE_URL}/products`)
       .then((response) => {
@@ -33,12 +34,24 @@ const Home = () => {
         console.error(err);
       });
   }, [query]);
-  console.log(products);
+
+  useEffect(() => {
+    fetch(`${config.API_BASE_URL}/products/category/${category}`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((result) => {
+        setCategory(result);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
   return (
     <>
       <Navbar />
-      <Search setQuery={setQuery} />
+      <Search setQuery={setQuery} setCategory={setCategory} />
       <section className="container">
         {products.length > 0 ? (
           products.map((product) => (
