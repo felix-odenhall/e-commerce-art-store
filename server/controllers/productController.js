@@ -1,12 +1,10 @@
 import { ObjectId } from 'mongodb';
 import { collection } from '../database/mongodb.js';
 
-//GetProductS query and category
-
 // GET
 const getProduct = async (req, res) => {
   const query = req.query;
-  console.log(query);
+  // console.log(query);
   let filter = {};
   if (query.title) {
     filter.title = { $regex: new RegExp(query.title, 'i') };
@@ -14,10 +12,10 @@ const getProduct = async (req, res) => {
   if (query.category) {
     filter.category = { $regex: new RegExp(query.category, 'i') };
   }
-
+  console.log('Categories Filter', query.category);
   const product = await collection.products.find(filter).toArray();
-  console.log(filter);
-  console.log(product);
+  // console.log(filter);
+  // console.log(product);
   res.status(200).json(product);
 };
 

@@ -8,9 +8,8 @@ const Home = () => {
   const [products, setProducts] = useState([]);
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('');
-  console.log(category);
   useEffect(() => {
-    fetch(`${config.API_BASE_URL}/products`)
+    fetch(`${config.API_BASE_URL}/products?title=${query}&category=${category}`)
       .then((response) => {
         return response.json();
       })
@@ -20,38 +19,16 @@ const Home = () => {
       .catch((err) => {
         console.error(err);
       });
-  }, []);
-
-  useEffect(() => {
-    fetch(`${config.API_BASE_URL}/products/${query}`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((result) => {
-        setProducts(result);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, [query]);
-
-  useEffect(() => {
-    fetch(`${config.API_BASE_URL}/products/category/${category}`)
-      .then((response) => {
-        return response.json();
-      })
-      .then((result) => {
-        setCategory(result);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }, []);
+  }, [category, query]);
 
   return (
     <>
       <Navbar />
-      <Search setQuery={setQuery} setCategory={setCategory} />
+      <Search
+        setQuery={setQuery}
+        setCategory={setCategory}
+        category={category}
+      />
       <section className="container">
         {products.length > 0 ? (
           products.map((product) => (

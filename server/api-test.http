@@ -1,11 +1,6 @@
-GET http://localhost:8080/products
+GET http://localhost:8080/products?category=en
 Content-Type: application/json
 
-{
-
-    "title": "Moonlight Castle"
-
-}
 
 ### Get posts
 GET http://localhost:8080/products
