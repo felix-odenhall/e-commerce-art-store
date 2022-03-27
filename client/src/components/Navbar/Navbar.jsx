@@ -1,8 +1,10 @@
 import './_Navbar.scss';
 import { FaShoppingCart } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useState, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  // const [cartOpen, setCartOpen] = useState(false);
   return (
     <nav className="navbar">
       <div className="navbar__logo">LOGO</div>
@@ -23,9 +25,9 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
-      <Link className="navbar__cart__icon" to="/contact">
+      <button onClick={() => navigate('/cart')}>
         <FaShoppingCart />
-      </Link>
+      </button>
     </nav>
   );
 };

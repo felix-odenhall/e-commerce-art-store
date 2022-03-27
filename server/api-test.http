@@ -1,6 +1,17 @@
 GET http://localhost:8080/products?category=en
 Content-Type: application/json
 
-
 ### Get posts
 GET http://localhost:8080/products
+
+### Post Product
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{
+
+"image": "..//assets/images/toxic_character.jpg",
+"title": "Toxic Tammy",
+"category" : "character", 
+"price"
+}

@@ -42,7 +42,7 @@ const Home = () => {
             />
           ))
         ) : (
-          <h2>There are no matches for (---input---)</h2>
+          <h2>{`No matches for: ${query}`}</h2>
         )}
       </section>
     </>

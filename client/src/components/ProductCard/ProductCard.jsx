@@ -1,23 +1,30 @@
 import './_ProductCard.scss';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const ProductCard = ({ _id, image, title, type, price }) => {
+  const navigate = useNavigate();
+  const handleClick = (e) => {
+    e.preventDefault();
+    navigate('/checkout');
+  };
   return (
-    <Link to={`/product/${_id}`}>
+    <>
       <div className="card-container">
-        <img
-          className="product-img"
-          src={image}
-          alt="A pricture of the art work"
-        />
-        <h3>{title ? title : 'Coming soon'}</h3>
+        <Link to={`/product/${_id}`}>
+          <img
+            className="product-img"
+            src={image}
+            alt={`A picture of ${title}`}
+          />
+        </Link>
+        <Link to={`/product/${_id}`}>
+          <h3>{title ? title : 'Coming soon'}</h3>
+        </Link>
         <p>{type ? type : ''}</p>
         <p>${price ? price : 'Pricless'}</p>
-
-        <button>Buy</button>
       </div>
-    </Link>
+    </>
   );
 };
 

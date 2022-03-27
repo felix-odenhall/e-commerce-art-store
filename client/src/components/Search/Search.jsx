@@ -24,61 +24,26 @@ const Search = ({ setQuery, setCategory, category }) => {
     const categoryName = el.target.value;
     setQuery('');
 
-    const categoriesValuesToArray = Object.values(categories);
-    // console.log(categoriesValuesToArray);
-
-    // const categoriesToValuesToArrayFilter = categoriesValuesToArray.filter(
-    //   (values) => values >= 2
-    // );
-    // console.log(categoriesToValuesToArrayFilter);
-
-    const categoriesKeyToArray = Object.keys(categories);
-    // console.log(categoriesKeyToArray);
-
-    const categoriesKeyToArrayFilter = categoriesKeyToArray.filter(
-      (key) => key.length > 4
-    );
-    console.log(categoriesKeyToArrayFilter);
-
-    let fabiansThing = 0;
+    let selectedCategories = 0;
     if (checked) {
-      fabiansThing = categoryEnum + categoryId;
+      selectedCategories = categoryEnum + categoryId;
     } else {
-      fabiansThing = categoryEnum - categoryId;
-      // console.log(typeof category, category, typeof categoryName, categoryName);
+      selectedCategories = categoryEnum - categoryId;
     }
 
-    setCategoryEnum(fabiansThing);
-    console.log(categoryId, categoryName, categoryEnum);
+    setCategoryEnum(selectedCategories);
 
     const allTheCategoryEntries = Object.entries(categories);
     const filteredCategoryEntries = allTheCategoryEntries.filter(
-      (val) => val[1] & fabiansThing
+      (val) => val[1] & selectedCategories
     );
-    const ourNewCategoryFilter = filteredCategoryEntries
+    const newCategoryFilter = filteredCategoryEntries
       .map((val) => val[0])
       .join('|');
 
-    setCategory(ourNewCategoryFilter);
-
-    // switch (categoryName) {
-    //   case 0:
-    //     setCategory(category + categoryName);
-    //     console.log('the season is summer');
-    //     break;
-    //   case 1:
-    //     setCategory(category - categoryName);
-    //     console.log('the season is summer');
-    //     break;
-    // }
-    // if (checked) {
-    //   setCategory(categoryName);
-    //   console.log(`${categoryName} is checked`);
-    // }
-    // else if (!checked) {
-    //   setCategory('');
-    // }
+    setCategory(newCategoryFilter);
   };
+
   return (
     <div className="search">
       <div className="search__filter">
