@@ -9,6 +9,8 @@ const Product = ({
   onUpdateCart,
   setCartItems,
   addToCart,
+  isActive,
+  setIsActive,
 }) => {
   // const navigate = useNavigate();
   // const getCartLs = JSON.parse(localStorage.getItem('cart')) || [];
@@ -115,7 +117,14 @@ const Product = ({
       <img src={fetchedProduct.image} alt="" />
       <h3>{fetchedProduct.title}</h3>
       <div className="btn-container">
-        <button onClick={() => addToCart(fetchedProduct)}>Add to cart</button>
+        <button
+          onClick={() => {
+            addToCart(fetchedProduct);
+            setIsActive(!isActive);
+          }}
+        >
+          Add to cart
+        </button>
         {/* <Link to={'/checkout'}>Buy </Link> */}
       </div>
       {/* <CartComponent

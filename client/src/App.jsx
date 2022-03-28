@@ -1,4 +1,6 @@
 import Header from './components/Header/Header';
+
+import CartComponent from './components/CartComponent/CartComponent';
 // import Button from './components/Button/Button';
 
 import { Home, Product, About, Checkout } from './pages';
@@ -59,6 +61,7 @@ const App = () => {
   const emptyCart = () => {
     onUpdateCart([]);
   };
+  const [isActive, setIsActive] = useState(false);
 
   return (
     <div>
@@ -70,7 +73,22 @@ const App = () => {
         onUpdateCart={onUpdateCart}
         getCartLs={getCartLs}
         emptyCart={emptyCart}
+        isActive={isActive}
+        setIsActive={setIsActive}
       />
+      {isActive && (
+        <CartComponent
+          addToCart={addToCart}
+          removeFromCart={removeFromCart}
+          cartItem={cartItem}
+          setCartItems={setCartItems}
+          onUpdateCart={onUpdateCart}
+          getCartLs={getCartLs}
+          emptyCart={emptyCart}
+          isActive={isActive}
+          setIsActive={setIsActive}
+        />
+      )}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -83,6 +101,7 @@ const App = () => {
               addToCart={addToCart}
               setCartItems={setCartItems}
               onUpdateCart={onUpdateCart}
+              setIsActive={setIsActive}
             />
           }
         />
