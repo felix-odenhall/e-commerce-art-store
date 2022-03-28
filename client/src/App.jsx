@@ -61,7 +61,7 @@ const App = () => {
   };
 
   return (
-    <div className="App">
+    <div>
       <Header
         addToCart={addToCart}
         removeFromCart={removeFromCart}

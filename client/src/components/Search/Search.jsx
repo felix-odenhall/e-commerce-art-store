@@ -1,4 +1,4 @@
-import { FaSistrix } from 'react-icons/fa';
+import { AiOutlineSearch } from 'react-icons/ai';
 import { useState } from 'react';
 
 const Search = ({ setQuery, setCategory, category }) => {
@@ -44,8 +44,8 @@ const Search = ({ setQuery, setCategory, category }) => {
   };
 
   return (
-    <div className="search">
-      <div className="search__filter">
+    <div className="flex flex-row justify-between items-center bg-blue-400 px-5 py-2">
+      <div>
         <input
           type="checkbox"
           id={categories.environment}
@@ -53,7 +53,9 @@ const Search = ({ setQuery, setCategory, category }) => {
           value="environment"
           onChange={handleOnChangeCheck}
         />
-        <label htmlFor="environment">Environment</label>
+        <label className="px-2" htmlFor="environment">
+          Environment
+        </label>
         <input
           type="checkbox"
           id={categories.character}
@@ -61,12 +63,15 @@ const Search = ({ setQuery, setCategory, category }) => {
           value="character"
           onChange={handleOnChangeCheck}
         ></input>
-        <label htmlFor="character">Characters</label>
+        <label className="px-2" htmlFor="character">
+          Characters
+        </label>
       </div>
-      <div className="search__form">
-        <form onSubmit={handleSubmit}>
+      <div>
+        <form className="flex justify-center" onSubmit={handleSubmit}>
           <label htmlFor="search-artwork"></label>
           <input
+            className="rounded p-2 mr-2"
             onChange={handleOnChangeSearch}
             type="text"
             id="header-search"
@@ -74,8 +79,8 @@ const Search = ({ setQuery, setCategory, category }) => {
             name="search-artwork"
             value={searchInput}
           />
-          <button type="submit">
-            <FaSistrix />
+          <button className=" text-3xl text-blue-900" type="submit">
+            <AiOutlineSearch />
           </button>
         </form>
       </div>

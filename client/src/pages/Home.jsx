@@ -21,13 +21,13 @@ const Home = () => {
   }, [category, query]);
 
   return (
-    <>
+    <main className="flex flex-col">
       <Search
         setQuery={setQuery}
         setCategory={setCategory}
         category={category}
       />
-      <section className="container">
+      <section className="flex flex-col justify-center items-center md:flex-row ">
         {products.length > 0 ? (
           products.map((product) => (
             <ProductCard
@@ -43,7 +43,7 @@ const Home = () => {
           <h2>{`No matches for: ${query}`}</h2>
         )}
       </section>
-    </>
+    </main>
   );
 };
 

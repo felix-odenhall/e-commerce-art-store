@@ -18,7 +18,7 @@ const CartComponent = ({
   //   localStorage.setItem('cart', JSON.stringify(getItem));
   // }, [getItem]);
   return (
-    <div>
+    <div className="hidden">
       <button onClick={() => emptyCart(fetchedProduct)}>Empty Cart</button>
       <h2>Cart Items</h2>
       <div>{getCartLs.length === 0 && <div>Cart is empty</div>}</div>
