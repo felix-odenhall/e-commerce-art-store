@@ -1,4 +1,3 @@
-import Navbar from '../components/Navbar/Navbar';
 import ProductCard from '../components/ProductCard/ProductCard';
 import Search from '../components/Search/Search';
 import { useEffect, useState } from 'react';
@@ -23,7 +22,6 @@ const Home = () => {
 
   return (
     <>
-      <Navbar />
       <Search
         setQuery={setQuery}
         setCategory={setCategory}

@@ -29,7 +29,8 @@ import { useEffect, useState } from 'react';
 
 const Cart = () => {
   const [fetchedProduct, setFetchedProduct] = useState('');
-  const [cartItems, setCartItems] = useState([]);
+  const getCart = JSON.parse(localStorage.getItem('cart')) || [];
+  const [cartItems, setCartItems] = useState(getCart);
   const addToCart = (fetchedProduct) => {
     const exists = cartItems.find((x) => x.id === fetchedProduct.id);
     if (exists) {
