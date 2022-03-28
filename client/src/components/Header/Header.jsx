@@ -1,4 +1,3 @@
-import './_Navbar.scss';
 import { FaShoppingCart } from 'react-icons/fa';
 import { Link, useState, useNavigate } from 'react-router-dom';
 import CartComponent from '../CartComponent/CartComponent';
@@ -17,7 +16,7 @@ const Navbar = ({
   let cartqty = 0;
   getCartLs.forEach((product) => (cartqty += product.amount));
   return (
-    <>
+    <header>
       <nav className="navbar">
         <div className="navbar__logo">LOGO</div>
         <ul className="navbar__list">
@@ -53,7 +52,7 @@ const Navbar = ({
         getCartLs={getCartLs}
         emptyCart={emptyCart}
       />
-    </>
+    </header>
   );
 };
 

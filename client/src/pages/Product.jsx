@@ -1,5 +1,3 @@
-import '../components/ProductCard/_ProductCard.scss';
-// import Cart from './Cart';
 import * as config from '../Config';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useEffect, useState } from 'react';

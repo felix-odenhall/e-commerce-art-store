@@ -19,8 +19,6 @@ const CartComponent = ({
   // }, [getItem]);
   return (
     <div>
-      <h2>Hello {[getCartLs.title]}</h2>
-
       <button onClick={() => emptyCart(fetchedProduct)}>Empty Cart</button>
       <h2>Cart Items</h2>
       <div>{getCartLs.length === 0 && <div>Cart is empty</div>}</div>

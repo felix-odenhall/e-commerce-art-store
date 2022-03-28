@@ -1,4 +1,3 @@
-import './_Search.scss';
 import { FaSistrix } from 'react-icons/fa';
 import { useState } from 'react';
 
