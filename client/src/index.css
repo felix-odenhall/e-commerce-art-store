@@ -4,6 +4,7 @@
 
 @layer base {
   body {
-    @apply min-h-screen bg-neutral-300;
+    @apply min-h-screen bg-gradient-to-b from-white to-slate-50
+    bg-slate-600;
   }
 }

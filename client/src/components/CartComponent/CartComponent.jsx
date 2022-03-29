@@ -18,14 +18,17 @@ const CartComponent = ({
   // const getItem = JSON.parse(localStorage.getItem('cart'));
 
   const totalPrice = getCartLs.reduce((a, b) => a + b.price * b.amount, 0);
-  // useEffect(() => {
-  //   localStorage.setItem('cart', JSON.stringify(getItem));
-  // }, [getItem]);
+
   return (
-    <div className="flex flex-col bg-white absolute top-15 right-2 h-auto w-2/12 px-2 pt-3 pb-5 rounded-md">
+    <div className="flex flex-col bg-white absolute top-15 right-2 h-auto w-56 px-2 pt-3 pb-5 rounded-md">
       <div className="flex justify-between items-center pb-4">
         <h3 className=" text-2xl font-semibold ">Your items:</h3>{' '}
-        <button onClick={() => emptyCart(fetchedProduct)}>
+        <button
+          onClick={() => {
+            emptyCart(fetchedProduct);
+            setIsActive(!isActive);
+          }}
+        >
           <RiDeleteBin6Line />
         </button>
       </div>
@@ -63,7 +66,9 @@ const CartComponent = ({
       <Link
         className=" bg-black text-white text-center p-2"
         to="/checkout"
-        onClick={(e) => setIsActive(!isActive)}
+        onClick={() => {
+          setIsActive(!isActive);
+        }}
       >
         CHECKOUT
       </Link>

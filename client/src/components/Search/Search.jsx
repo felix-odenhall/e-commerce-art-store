@@ -44,47 +44,51 @@ const Search = ({ setQuery, setCategory, category }) => {
   };
 
   return (
-    <div className="flex flex-row justify-between items-center bg-blue-400 px-5 py-2">
-      <div>
-        <input
-          type="checkbox"
-          id={categories.environment}
-          name="environment"
-          value="environment"
-          onChange={handleOnChangeCheck}
-        />
-        <label className="px-2" htmlFor="environment">
-          Environment
-        </label>
-        <input
-          type="checkbox"
-          id={categories.character}
-          name="character"
-          value="character"
-          onChange={handleOnChangeCheck}
-        ></input>
-        <label className="px-2" htmlFor="character">
-          Characters
-        </label>
-      </div>
-      <div>
-        <form className="flex justify-center" onSubmit={handleSubmit}>
-          <label htmlFor="search-artwork"></label>
+    <>
+      <hr className="bg-slate-200 mt-2" />
+      <div className="mx-auto w-full max-w-6xl flex flex-row justify-between items-center px-5 py-4">
+        <div>
           <input
-            className="rounded p-2 mr-2"
-            onChange={handleOnChangeSearch}
-            type="text"
-            id="header-search"
-            placeholder="Search artwork"
-            name="search-artwork"
-            value={searchInput}
+            type="checkbox"
+            id={categories.environment}
+            name="environment"
+            value="environment"
+            onChange={handleOnChangeCheck}
           />
-          <button className=" text-3xl text-blue-900" type="submit">
-            <AiOutlineSearch />
-          </button>
-        </form>
+          <label className="px-2" htmlFor="environment">
+            Environment
+          </label>
+          <input
+            type="checkbox"
+            id={categories.character}
+            name="character"
+            value="character"
+            onChange={handleOnChangeCheck}
+          ></input>
+          <label className="px-2" htmlFor="character">
+            Characters
+          </label>
+        </div>
+        <div>
+          <form className="flex justify-center" onSubmit={handleSubmit}>
+            <label htmlFor="search-artwork"></label>
+            <input
+              className="rounded p-2 mr-2 bg-slate-100"
+              onChange={handleOnChangeSearch}
+              type="text"
+              id="header-search"
+              placeholder="Search artwork"
+              name="search-artwork"
+              value={searchInput}
+            />
+            <button className=" text-3xl text-slate-900" type="submit">
+              <AiOutlineSearch />
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+      <hr className="bg-slate-200 mb-3" />
+    </>
   );
 };
 

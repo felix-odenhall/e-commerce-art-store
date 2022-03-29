@@ -3,9 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 const ProductCard = ({ _id, image, title, type, price }) => {
   return (
     <>
-      <div className="max-w-sm rounded-md overflow-hidden shadow-lg m-2 bg-white">
+      <div className=" w-56 rounded-md overflow-hidden shadow-lg m-2 bg-white">
         <Link to={`/product/${_id}`}>
-          <img className="w-full" src={image} alt={`A picture of ${title}`} />
+          <img src={image} alt={`A picture of ${title}`} />
         </Link>
         <div className="px-6 py-4">
           <Link to={`/product/${_id}`}>

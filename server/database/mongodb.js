@@ -9,4 +9,5 @@ const db = mongoClient.db('data-interaction-brief');
 export const collection = {
   products: db.collection('products'),
   cart: db.collection('cart'),
+  orders: db.collection('orders'),
 };

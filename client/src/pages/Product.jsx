@@ -116,7 +116,7 @@ const Product = ({
     <>
       <img src={fetchedProduct.image} alt="" />
       <h3>{fetchedProduct.title}</h3>
-      <div className="btn-container">
+      <div>
         <button
           onClick={() => {
             addToCart(fetchedProduct);
