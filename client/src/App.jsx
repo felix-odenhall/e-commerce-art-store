@@ -1,13 +1,7 @@
 import Header from './components/Header/Header';
-
 import CartComponent from './components/CartComponent/CartComponent';
-// import Button from './components/Button/Button';
-
 import { Home, Product, About, Checkout, Admin } from './pages';
-// import { Home, Product, About, Cart, Checkout } from './pages';
-
 import { Routes, Route } from 'react-router-dom';
-
 import { useState, useEffect } from 'react';
 
 const App = () => {
@@ -106,7 +100,6 @@ const App = () => {
           }
         />
         <Route path="/about" element={<About />} />
-        {/* <Route path="/cart" element={<Cart />} /> */}
         <Route
           path="/checkout"
           element={
@@ -114,7 +107,6 @@ const App = () => {
           }
         />
         <Route path="/admin" element={<Admin />} />
-        {/* <Route path="*" element="404 Page" /> */}
       </Routes>
     </div>
   );

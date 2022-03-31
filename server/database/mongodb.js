@@ -10,4 +10,5 @@ export const collection = {
   products: db.collection('products'),
   cart: db.collection('cart'),
   orders: db.collection('orders'),
+  admin: db.collection('admin'),
 };

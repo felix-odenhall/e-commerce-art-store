@@ -1,6 +1,5 @@
 import React from 'react';
 import { RiDeleteBin6Line } from 'react-icons/ri';
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const CartComponent = ({
@@ -15,8 +14,6 @@ const CartComponent = ({
   isActive,
   setIsActive,
 }) => {
-  // const getItem = JSON.parse(localStorage.getItem('cart'));
-
   const totalPrice = getCartLs.reduce((a, b) => a + b.price * b.amount, 0);
 
   return (

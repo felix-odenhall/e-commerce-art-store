@@ -1,8 +1,5 @@
-import { FaShoppingCart } from 'react-icons/fa';
 import { AiOutlineShopping } from 'react-icons/ai';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import CartComponent from '../CartComponent/CartComponent';
 
 const Navbar = ({
   addToCart,
@@ -15,8 +12,6 @@ const Navbar = ({
   isActive,
   setIsActive,
 }) => {
-  // const [isActive, setIsActive] = useState(false);
-  // const [cartOpen, setCartOpen] = useState(false);
   let cartqty = 0;
   getCartLs.forEach((product) => (cartqty += product.amount));
   return (
@@ -27,11 +22,6 @@ const Navbar = ({
           <li className="flex items-center px-3 cursor-pointer font-semibold text-white h-14 hover:bg-neutral-400">
             <Link to="/">Home</Link>
           </li>
-          {/* <li>
-          <Link className="navbar__list__link" to="/products">
-            Products
-          </Link>
-        </li> */}
           <li className="flex items-center px-3 cursor-pointer font-semibold text-white h-14 hover:bg-neutral-400">
             <Link to="/about">About</Link>
           </li>
@@ -43,17 +33,6 @@ const Navbar = ({
           <p className="pl-2">{cartqty ? cartqty : ' '}</p>
         </div>
       </nav>
-      {/* {isActive && (
-        <CartComponent
-          addToCart={addToCart}
-          removeFromCart={removeFromCart}
-          cartItem={cartItem}
-          setCartItems={setCartItems}
-          onUpdateCart={onUpdateCart}
-          getCartLs={getCartLs}
-          emptyCart={emptyCart}
-        />
-      )} */}
     </header>
   );
 };
