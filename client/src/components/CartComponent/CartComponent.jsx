@@ -20,7 +20,7 @@ const CartComponent = ({
   const totalPrice = getCartLs.reduce((a, b) => a + b.price * b.amount, 0);
 
   return (
-    <div className="flex flex-col bg-white absolute top-15 right-2 h-auto w-56 px-2 pt-3 pb-5 rounded-md">
+    <div className="flex flex-col top-6 right-20 bg-white absolute lg:top-15 lg:right-52 h-auto w-56 px-2 pt-3 pb-5 rounded-md">
       <div className="flex justify-between items-center pb-4">
         <h3 className=" text-2xl font-semibold ">Your items:</h3>{' '}
         <button

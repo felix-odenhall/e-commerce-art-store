@@ -1,9 +1,9 @@
+import { ObjectId } from 'mongodb';
 import { collection } from '../database/mongodb.js';
 
 const setOrder = async (req, res) => {
   if (!req.body) {
     res.status(400);
-    throw new Error('Please add a text field');
   }
   await collection.orders.insertOne(req.body);
   console.log(req.body);
@@ -15,4 +15,14 @@ const getOrders = async (req, res) => {
   res.status(200).json(orders);
 };
 
-export { setOrder, getOrders };
+const shipOrder = async (req, res) => {
+  const orderId = req.params.orderId;
+  console.log(orderId);
+  await collection.orders.updateOne(
+    { _id: new ObjectId(orderId) },
+    { $set: { isShipped: true } }
+  );
+  res.status(200).json({});
+};
+
+export { setOrder, getOrders, shipOrder };

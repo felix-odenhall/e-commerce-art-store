@@ -6,9 +6,10 @@ const Checkout = ({ emptyCart, onUpdateCart }) => {
 
   const databody = getCartLs.map((product) => {
     return {
-      productid: product._id,
-      productamount: product.amount,
-      producttitle: product.title,
+      productId: product._id,
+      productAmount: product.amount,
+      productTitle: product.title,
+      productShipped: product.isShipped,
     };
   });
 
@@ -17,7 +18,7 @@ const Checkout = ({ emptyCart, onUpdateCart }) => {
   const sendOrder = () => {
     fetch(`${config.API_BASE_URL}/orders`, {
       method: 'POST',
-      body: JSON.stringify({ products: databody }),
+      body: JSON.stringify({ products: databody, isShipped: false }),
       headers: {
         'Content-Type': 'application/json',
       },

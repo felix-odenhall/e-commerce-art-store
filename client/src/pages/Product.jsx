@@ -125,6 +125,15 @@ const Product = ({
         >
           Add to cart
         </button>
+        <Link
+          className=" bg-black text-white text-center p-2"
+          to="/checkout"
+          onClick={() => {
+            addToCart(fetchedProduct);
+          }}
+        >
+          Buy
+        </Link>
         {/* <Link to={'/checkout'}>Buy </Link> */}
       </div>
       {/* <CartComponent
