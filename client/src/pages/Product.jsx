@@ -26,11 +26,15 @@ const Product = ({
       });
   }, [id]);
   return fetchedProduct ? (
-    <>
-      <img src={fetchedProduct.image} alt="" />
-      <h3>{fetchedProduct.title}</h3>
-      <div>
+    <main className="flex justify-center items-center flex-col w-full p-4">
+      <img className="w-3/5" src={fetchedProduct.image} alt="" />
+      <div className="flex w-3/5 justify-between items-center py-4">
+        <h3 className=" text-2xl">{fetchedProduct.title}</h3>
+        <h4 className=" text-xl">${fetchedProduct.price}</h4>
+      </div>
+      <div className="flex">
         <button
+          className=" m-2 w-36 bg-slate-700 text-white text-center p-2 hover:bg-slate-600 rounded"
           onClick={() => {
             addToCart(fetchedProduct);
             setIsActive(!isActive);
@@ -38,29 +42,18 @@ const Product = ({
         >
           Add to cart
         </button>
-        <Link
-          className=" bg-black text-white text-center p-2"
-          to="/checkout"
-          onClick={() => {
-            addToCart(fetchedProduct);
-          }}
-        >
-          Buy
-        </Link>
-        {/* <Link to={'/checkout'}>Buy </Link> */}
+        <div className=" m-2 w-36 bg-slate-700 text-white text-center p-2 hover:bg-slate-600 rounded">
+          <Link
+            to="/checkout"
+            onClick={() => {
+              addToCart(fetchedProduct);
+            }}
+          >
+            Buy
+          </Link>
+        </div>
       </div>
-      {/* <CartComponent
-        addToCart={addToCart}
-        removeFromCart={removeFromCart}
-        cartItems={cartItems}
-      /> */}
-      {/* <button onClick={() => navigate('/cart')}>
-        <FaShoppingCart /> {cartItems.length}
-      </button> */}
-      <button>
-        <FaShoppingCart />
-      </button>
-    </>
+    </main>
   ) : (
     <h1>Loading... </h1>
   );

@@ -17,7 +17,7 @@ const CartComponent = ({
   const totalPrice = getCartLs.reduce((a, b) => a + b.price * b.amount, 0);
 
   return (
-    <div className="flex flex-col top-6 right-20 bg-white absolute lg:top-15 lg:right-52 h-auto w-56 px-2 pt-3 pb-5 rounded-md">
+    <div className="flex flex-col top-6 right-1 bg-slate-100  absolute lg:top-24 lg:right-36 h-auto w-56 px-2 pt-3 pb-5 rounded-md shadow">
       <div className="flex justify-between items-center pb-4">
         <h3 className=" text-2xl font-semibold ">Your items:</h3>{' '}
         <button
@@ -61,7 +61,7 @@ const CartComponent = ({
       </div>
       <hr className=" border-1 border-slate-300 my-2" />
       <Link
-        className=" bg-black text-white text-center p-2"
+        className=" text-center w-36 bg-slate-700 text-white p-2 hover:bg-slate-600 rounded"
         to="/checkout"
         onClick={() => {
           setIsActive(!isActive);

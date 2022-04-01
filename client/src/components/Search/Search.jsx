@@ -73,7 +73,7 @@ const Search = ({ setQuery, setCategory, category }) => {
           <form className="flex justify-center" onSubmit={handleSubmit}>
             <label htmlFor="search-artwork"></label>
             <input
-              className="rounded p-2 mr-2 bg-slate-100"
+              className="rounded p-2 mr-2 bg-slate-200"
               onChange={handleOnChangeSearch}
               type="text"
               id="header-search"

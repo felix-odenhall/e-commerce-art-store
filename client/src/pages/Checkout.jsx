@@ -34,20 +34,30 @@ const Checkout = ({ emptyCart, onUpdateCart }) => {
       });
   };
   return confirmOrder ? (
-    <h1>Thank you and fuck off!</h1>
+    <h1>Thank you, your order is registered and will soon be shipped.</h1>
   ) : (
-    <div>
-      <div>
-        {getCartLs.map((product, i) => {
-          return (
-            <h1 key={i}>
-              {product.title} x {product.amount}
-            </h1>
-          );
-        })}
-      </div>
-      <button onClick={sendOrder}>Confirm</button>
-    </div>
+    <main className="flex justify-center w-full m-6">
+      <section className=" flex justify-start items-center flex-col p-12 bg-slate-100 w-72">
+        <h1 className="text-2xl font-semibold mb-6">Your products</h1>
+        <div>
+          {getCartLs.map((product, i) => {
+            return (
+              <div className="m-4">
+                <h2 classname="pb-4" key={i}>
+                  {product.title} x {product.amount}
+                </h2>
+              </div>
+            );
+          })}
+        </div>
+        <button
+          className=" m-2 w-36 bg-slate-700 text-white text-center p-2 hover:bg-slate-600 rounded"
+          onClick={sendOrder}
+        >
+          Confirm
+        </button>
+      </section>
+    </main>
   );
 };
 

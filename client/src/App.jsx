@@ -1,6 +1,6 @@
 import Header from './components/Header/Header';
 import CartComponent from './components/CartComponent/CartComponent';
-import { Home, Product, About, Checkout, Admin } from './pages';
+import { Home, Product, About, Checkout, Admin, Login } from './pages';
 import { Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
@@ -85,6 +85,7 @@ const App = () => {
       )}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route
           path="/product/:id"
           element={

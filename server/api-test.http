@@ -10,8 +10,20 @@ Content-Type: application/json
 
 {
 
-"image": "..//assets/images/toxic_character.jpg",
-"title": "Toxic Tammy",
-"category" : "character", 
-"price"
+"image": "..//assets/images/night_lake_v3.jpg",
+"title": "Night Lake",
+"category" : "environment", 
+"price": 800,
+"isShipped" : false
+}
+
+### Create user
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+
+"user": "admin",
+"password": "1234qwer",
+"isAdmin" : true
 }
