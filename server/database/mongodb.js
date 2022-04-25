@@ -1,6 +1,7 @@
 import { MongoClient, Db } from 'mongodb';
 
-const mongoClient = new MongoClient('mongodb://localhost:27017');
+const MONGODB_URL = process.env.MONGODB_URL || 'mongodb://localhost:27017';
+const mongoClient = new MongoClient(MONGODB_URL);
 
 mongoClient.connect();
 

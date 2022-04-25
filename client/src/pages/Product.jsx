@@ -42,16 +42,16 @@ const Product = ({
         >
           Add to cart
         </button>
-        <div className=" m-2 w-36 bg-slate-700 text-white text-center p-2 hover:bg-slate-600 rounded">
-          <Link
-            to="/checkout"
-            onClick={() => {
-              addToCart(fetchedProduct);
-            }}
-          >
-            Buy
-          </Link>
-        </div>
+        <Link
+          className=" block m-2 w-36 bg-slate-700 text-white text-center p-2 hover:bg-slate-600 rounded"
+          to="/checkout"
+          onClick={() => {
+            addToCart(fetchedProduct);
+          }}
+        >
+          {' '}
+          Buy
+        </Link>
       </div>
     </main>
   ) : (
