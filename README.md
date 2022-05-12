@@ -40,3 +40,5 @@ REST APIs:
   How to connect to a database.
   
   How to use CRUD operators (POST, GET, DELETE etc.) to store, retrieve and manipulate data in the DB.
+  
+ Tailwindcss
