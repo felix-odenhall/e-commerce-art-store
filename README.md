@@ -43,7 +43,7 @@ REST APIs:
   
  Tailwindcss
  
- Database document:
+ Sample database document:
  
 ```{
   "_id": {
