@@ -1,5 +1,4 @@
-import { ObjectId } from 'mongodb';
-import { collection } from '../database/mongodb.js';
+import { collection } from "../database/mongodb.js";
 
 const setUser = async (req, res) => {
   const newUser = req.body;

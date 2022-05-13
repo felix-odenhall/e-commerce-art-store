@@ -1,18 +1,8 @@
-import { AiOutlineShopping } from 'react-icons/ai';
-import { GrUserAdmin } from 'react-icons/gr';
-import { Link } from 'react-router-dom';
+import { AiOutlineShopping } from "react-icons/ai";
+import { GrUserAdmin } from "react-icons/gr";
+import { Link } from "react-router-dom";
 
-const Navbar = ({
-  addToCart,
-  removeFromCart,
-  cartItem,
-  setCartItems,
-  onUpdateCart,
-  getCartLs,
-  emptyCart,
-  isActive,
-  setIsActive,
-}) => {
+const Navbar = ({ getCartLs, isActive, setIsActive }) => {
   let cartqty = 0;
   getCartLs.forEach((product) => (cartqty += product.amount));
   return (
@@ -35,7 +25,7 @@ const Navbar = ({
             <AiOutlineShopping />
           </button>
           <p className=" pl-0.5 mr-2 text-sm text-white">
-            {cartqty ? cartqty : ' '}
+            {cartqty ? cartqty : " "}
           </p>
           <Link to="/login">
             <GrUserAdmin />

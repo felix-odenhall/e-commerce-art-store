@@ -1,8 +1,8 @@
-import * as config from '../Config';
-import { useState, useEffect } from 'react';
+import * as config from "../Config";
+import { useState } from "react";
 
 const Checkout = ({ emptyCart, onUpdateCart }) => {
-  const getCartLs = JSON.parse(localStorage.getItem('cart')) || [];
+  const getCartLs = JSON.parse(localStorage.getItem("cart")) || [];
 
   const databody = getCartLs.map((product) => {
     return {
@@ -17,10 +17,10 @@ const Checkout = ({ emptyCart, onUpdateCart }) => {
 
   const sendOrder = () => {
     fetch(`${config.API_BASE_URL}/orders`, {
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify({ products: databody, isShipped: false }),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     })
       .then((res) => res.json())
@@ -29,7 +29,7 @@ const Checkout = ({ emptyCart, onUpdateCart }) => {
         onUpdateCart([]);
         setConfirmOrder(!confirmOrder);
         setTimeout(() => {
-          window.location.href = '/';
+          window.location.href = "/";
         }, 4000);
       });
   };

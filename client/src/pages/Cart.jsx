@@ -1,10 +1,10 @@
-import CartComponent from '../components/CartComponent/CartComponent';
-import Navbar from '../components/Navbar/Navbar';
-import { useEffect, useState } from 'react';
+import CartComponent from "../components/CartComponent/CartComponent";
+import Navbar from "../components/Navbar/Navbar";
+import { useState } from "react";
 
 const Cart = () => {
-  const [fetchedProduct, setFetchedProduct] = useState('');
-  const getCart = JSON.parse(localStorage.getItem('cart')) || [];
+  const [fetchedProduct, setFetchedProduct] = useState("");
+  const getCart = JSON.parse(localStorage.getItem("cart")) || [];
   const [cartItems, setCartItems] = useState(getCart);
   const addToCart = (fetchedProduct) => {
     const exists = cartItems.find((x) => x.id === fetchedProduct.id);

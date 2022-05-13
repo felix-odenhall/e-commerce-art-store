@@ -1,24 +1,24 @@
-import Header from './components/Header/Header';
-import CartComponent from './components/CartComponent/CartComponent';
-import { Home, Product, About, Checkout, Admin, Login } from './pages';
-import { Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import Header from "./components/Header/Header";
+import CartComponent from "./components/CartComponent/CartComponent";
+import { Home, Product, About, Checkout, Admin, Login } from "./pages";
+import { Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const App = () => {
-  const [fetchedProduct, setFetchedProduct] = useState('');
+  const [fetchedProduct, setFetchedProduct] = useState("");
 
-  const getCartLs = JSON.parse(localStorage.getItem('cart')) || [];
+  const getCartLs = JSON.parse(localStorage.getItem("cart")) || [];
   const [cartItem, setCartItems] = useState(getCartLs);
 
   const onUpdateCart = (newCart) => {
     setCartItems(newCart);
-    localStorage.setItem('cart', JSON.stringify(newCart));
+    localStorage.setItem("cart", JSON.stringify(newCart));
   };
 
   useEffect(() => {
     console.log(cartItem);
-    localStorage.setItem('cart', JSON.stringify(cartItem));
-    console.log(localStorage.getItem('cart'));
+    localStorage.setItem("cart", JSON.stringify(cartItem));
+    console.log(localStorage.getItem("cart"));
   }, [cartItem]);
 
   const addToCart = (fetchedProduct) => {
@@ -60,13 +60,7 @@ const App = () => {
   return (
     <div>
       <Header
-        addToCart={addToCart}
-        removeFromCart={removeFromCart}
-        cartItem={cartItem}
-        setCartItems={setCartItems}
-        onUpdateCart={onUpdateCart}
         getCartLs={getCartLs}
-        emptyCart={emptyCart}
         isActive={isActive}
         setIsActive={setIsActive}
       />
@@ -74,7 +68,6 @@ const App = () => {
         <CartComponent
           addToCart={addToCart}
           removeFromCart={removeFromCart}
-          cartItem={cartItem}
           setCartItems={setCartItems}
           onUpdateCart={onUpdateCart}
           getCartLs={getCartLs}
@@ -92,10 +85,8 @@ const App = () => {
             <Product
               fetchedProduct={fetchedProduct}
               setFetchedProduct={setFetchedProduct}
-              cartItem={cartItem}
               addToCart={addToCart}
               setCartItems={setCartItems}
-              onUpdateCart={onUpdateCart}
               setIsActive={setIsActive}
             />
           }

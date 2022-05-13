@@ -1,13 +1,10 @@
-import * as config from '../Config';
-import { FaShoppingCart } from 'react-icons/fa';
-import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import * as config from "../Config";
+import { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 
 const Product = ({
   fetchedProduct,
   setFetchedProduct,
-  onUpdateCart,
-  setCartItems,
   addToCart,
   isActive,
   setIsActive,
@@ -49,7 +46,7 @@ const Product = ({
             addToCart(fetchedProduct);
           }}
         >
-          {' '}
+          {" "}
           Buy
         </Link>
       </div>

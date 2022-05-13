@@ -1,14 +1,11 @@
-import React from 'react';
-import { RiDeleteBin6Line } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const CartComponent = ({
   addToCart,
   removeFromCart,
   fetchedProduct,
-  cartItem,
-  setCartItems,
-  onUpdateCart,
   getCartLs,
   emptyCart,
   isActive,
@@ -19,7 +16,7 @@ const CartComponent = ({
   return (
     <div className="flex flex-col top-6 right-1 bg-slate-100  absolute lg:top-24 lg:right-36 h-auto w-56 px-2 pt-3 pb-5 rounded-md shadow">
       <div className="flex justify-between items-center pb-4">
-        <h3 className=" text-2xl font-semibold ">Your items:</h3>{' '}
+        <h3 className=" text-2xl font-semibold ">Your items:</h3>{" "}
         <button
           onClick={() => {
             emptyCart(fetchedProduct);
@@ -48,7 +45,7 @@ const CartComponent = ({
                   onClick={() => addToCart(item)}
                 >
                   +
-                </button>{' '}
+                </button>{" "}
               </div>
               x ${item.price}
             </div>
