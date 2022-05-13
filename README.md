@@ -1,6 +1,6 @@
 To start the application:
 1. Navigate to client
-2. npm start
+2. ```npm start```
 
 Brief: Build a complete e-commerce website - develop the frontend client in a technology of our choice, setting up a database in MongoDb, and creating a RESTful API to connect the two.
 
@@ -42,3 +42,19 @@ REST APIs:
   How to use CRUD operators (POST, GET, DELETE etc.) to store, retrieve and manipulate data in the DB.
   
  Tailwindcss
+ 
+ Database document:
+ 
+```{
+  "_id": {
+    "$oid": "62458299ad44cbcc4ff13785"
+  },
+  "image": "..//assets/images/night_lake_v3.jpg",
+  "title": "Night Lake",
+  "category": "environment",
+  "price": 800,
+  "isShipped": false
+}
+
+
+
