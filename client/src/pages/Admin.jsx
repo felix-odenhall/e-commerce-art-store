@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import * as config from '../Config';
+import { useState, useEffect } from "react";
+import * as config from "../Config";
 
 const Admin = () => {
   const [status, setStatus] = useState(false);
@@ -20,9 +20,9 @@ const Admin = () => {
 
   const updateOrder = (orderId) => {
     fetch(`${config.API_BASE_URL}/orders/${orderId}`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     })
       .then(() => setStatus(!status))
@@ -52,7 +52,7 @@ const Admin = () => {
                   <td className="text-xl font-semibold px-6 py-10">
                     {order._id}
                   </td>
-                  <td> {order.isShipped ? 'Shipped' : 'Not shipped'}</td>
+                  <td> {order.isShipped ? "Shipped" : "Not shipped"}</td>
                   <td className="px-6 py-2">
                     <button
                       className="bg-slate-100"
@@ -71,7 +71,7 @@ const Admin = () => {
       </section>
     </div>
   ) : (
-    <h1>Loading...</h1>
+    <h1>Loading</h1>
   );
 };
 
