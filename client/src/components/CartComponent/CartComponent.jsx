@@ -26,7 +26,7 @@ const CartComponent = ({
           <RiDeleteBin6Line />
         </button>
       </div>
-      <div>{getCartLs.length === 0 && <div>Cart is empty</div>}</div>
+      <div>{getCartLs.length === 0 && <div>Your cart is empty</div>}</div>
       {getCartLs.map((item) => (
         <div key={item._id}>
           <div className="pt-2">
