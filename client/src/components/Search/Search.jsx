@@ -20,7 +20,6 @@ const Search = ({ setQuery, setCategory, category }) => {
   const handleOnChangeCheck = (el) => {
     const checked = el.target.checked;
     const categoryId = parseInt(el.target.id);
-    // const categoryName = el.target.value;
     setQuery("");
 
     let selectedCategories = 0;
