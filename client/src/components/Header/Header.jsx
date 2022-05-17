@@ -8,7 +8,7 @@ const Navbar = ({ getCartLs, isActive, setIsActive }) => {
   return (
     <header className="w-full bg-gradient-to-b from-cyan-700 to-cyan-600 drop-shadow-md">
       <nav className="max-w-6xl text-l flex justify-between items-center h-20 px-5 mx-auto">
-        <div>LOGO</div>
+        <div>Felix Art Store</div>
         <ul className="flex">
           <li className="flex items-center px-3 cursor-pointer font-semibold text-white h-14 hover:underline">
             <Link to="/">Home</Link>

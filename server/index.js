@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 8090;
 const app = express();
 
 // prettier-ignore
-app.use(cors({origin:"*"}));
+app.use(cors({origin: "*"}));
 
 app.use(express.json());
 
