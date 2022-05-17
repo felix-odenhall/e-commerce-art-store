@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 8090;
 const app = express();
 
 // prettier-ignore
-app.use(cors({origin: "https://62838b1336389400083e8068--tubular-fox-efe7d6.netlify.app/"}));
+app.use(cors());
 app.use(express.json());
 
 app.use("/products", productRouter);
