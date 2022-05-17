@@ -9,10 +9,11 @@ const PORT = process.env.PORT || 8090;
 
 const app = express();
 
-app.use(cors({ origin: "*" }));
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.header(
+// prettier-ignore
+app.use(cors({origin: "*"}));
+app.use((request, response, next) => {
+  response.setHeader("Access-Control-Allow-Origin", "*");
+  response.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
   );
