@@ -11,14 +11,6 @@ const app = express();
 
 // prettier-ignore
 app.use(cors({origin: "*"}));
-app.use((request, response, next) => {
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
 app.use(express.json());
 
 app.use("/products", productRouter);
