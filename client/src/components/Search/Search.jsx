@@ -1,13 +1,13 @@
-import { AiOutlineSearch } from 'react-icons/ai';
-import { useState } from 'react';
+import { AiOutlineSearch } from "react-icons/ai";
+import { useState } from "react";
 
 const Search = ({ setQuery, setCategory, category }) => {
   const [categoryEnum, setCategoryEnum] = useState(0);
-  const [searchInput, setSearchInput] = useState('');
+  const [searchInput, setSearchInput] = useState("");
   const handleSubmit = (el) => {
     el.preventDefault();
     setQuery(searchInput);
-    setSearchInput('');
+    setSearchInput("");
   };
   const handleOnChangeSearch = (el) => {
     setSearchInput(el.target.value);
@@ -20,8 +20,8 @@ const Search = ({ setQuery, setCategory, category }) => {
   const handleOnChangeCheck = (el) => {
     const checked = el.target.checked;
     const categoryId = parseInt(el.target.id);
-    const categoryName = el.target.value;
-    setQuery('');
+    // const categoryName = el.target.value;
+    setQuery("");
 
     let selectedCategories = 0;
     if (checked) {
@@ -38,7 +38,7 @@ const Search = ({ setQuery, setCategory, category }) => {
     );
     const newCategoryFilter = filteredCategoryEntries
       .map((val) => val[0])
-      .join('|');
+      .join("|");
 
     setCategory(newCategoryFilter);
   };

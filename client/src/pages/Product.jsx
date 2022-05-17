@@ -21,7 +21,7 @@ const Product = ({
       .catch((err) => {
         console.error(err);
       });
-  }, [id]);
+  }, [id]); //eslint-disable-line
   return fetchedProduct ? (
     <main className="flex justify-center items-center flex-col w-full p-4">
       <img className="w-3/5" src={fetchedProduct.image} alt="" />
