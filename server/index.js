@@ -11,7 +11,6 @@ const app = express();
 
 // prettier-ignore
 app.use(cors({origin: "*"}));
-
 app.use(express.json());
 
 app.use("/products", productRouter);
