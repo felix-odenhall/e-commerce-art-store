@@ -5,12 +5,19 @@ import orderRouter from "./routes/orderRouter.js";
 import adminRouter from "./routes/adminRouter.js";
 import cors from "cors";
 
-const PORT = process.env.PORT || 8090;
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 
-// prettier-ignore
-app.use(cors({origin: "*"}));
+app.use(cors({ origin: "*" }));
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 app.use(express.json());
 
 app.use("/products", productRouter);
