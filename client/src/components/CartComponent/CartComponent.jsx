@@ -1,14 +1,11 @@
 import React from "react";
-import { RiDeleteBin6Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { useRef, useEffect } from "react";
 
 const CartComponent = ({
   addToCart,
   removeFromCart,
-  fetchedProduct,
   getCartLs,
-  emptyCart,
   isActive,
   setIsActive,
 }) => {
