@@ -36,14 +36,14 @@ const Checkout = ({ emptyCart, onUpdateCart }) => {
   return confirmOrder ? (
     <h1>Thank you, your order is registered and will soon be shipped.</h1>
   ) : (
-    <main className="flex justify-center w-full m-6">
+    <main className="flex justify-center w-full mt-6">
       <section className=" flex justify-start items-center flex-col p-12 bg-slate-100 w-72">
-        <h1 className="text-2xl font-semibold mb-6">Your products</h1>
+        <h1 className="text-2xl font-semibold mb-4">Your products</h1>
         <div>
           {getCartLs.map((product, i) => {
             return (
-              <div className="m-4">
-                <h2 classname="pb-4" key={i}>
+              <div className="m-4" key={i}>
+                <h2 className="pb-4">
                   {product.title} x {product.amount}
                 </h2>
               </div>

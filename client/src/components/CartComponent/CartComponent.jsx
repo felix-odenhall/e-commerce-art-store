@@ -22,10 +22,8 @@ const CartComponent = ({
     useEffect(
       () => {
         const listener = (event) => {
-          console.log("clicked");
           // Do nothing if clicking ref's element or descendent elements
           if (!ref.current || ref.current.contains(event.target)) {
-            console.log("something different");
             return;
           }
           handler(event);
@@ -49,17 +47,16 @@ const CartComponent = ({
   return (
     <div
       ref={ref}
-      className="flex flex-col top-6 right-1 bg-slate-100  absolute lg:top-24 lg:right-36 h-auto w-56 px-2 pt-3 pb-5 rounded-md shadow"
+      className="flex flex-col bg-slate-100 absolute h-full w-2/3 md:w-1/3 right-0 top-0 shadow-xl px-5 py-12"
     >
       <div className="flex justify-between items-center pb-4">
         <h3 className=" text-2xl font-semibold ">Your items:</h3>{" "}
         <button
           onClick={() => {
-            emptyCart(fetchedProduct);
             setIsActive(!isActive);
           }}
         >
-          <RiDeleteBin6Line />
+          X
         </button>
       </div>
       <div>{getCartLs.length === 0 && <div>Your cart is empty</div>}</div>

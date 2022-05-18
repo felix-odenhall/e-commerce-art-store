@@ -1,12 +1,12 @@
-import ProductCard from '../components/ProductCard/ProductCard';
-import Search from '../components/Search/Search';
-import { useEffect, useState } from 'react';
-import * as config from '../Config';
+import ProductCard from "../components/ProductCard/ProductCard";
+import Search from "../components/Search/Search";
+import { useEffect, useState } from "react";
+import * as config from "../Config";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
-  const [query, setQuery] = useState('');
-  const [category, setCategory] = useState('');
+  const [query, setQuery] = useState("");
+  const [category, setCategory] = useState("");
   useEffect(() => {
     fetch(`${config.API_BASE_URL}/products?title=${query}&category=${category}`)
       .then((response) => {
@@ -27,7 +27,7 @@ const Home = () => {
         setCategory={setCategory}
         category={category}
       />
-      <section className=" mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className=" mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {products.length > 0 ? (
           products.map((product) => (
             <ProductCard

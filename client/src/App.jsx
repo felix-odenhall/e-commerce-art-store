@@ -16,9 +16,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    console.log(cartItem);
     localStorage.setItem("cart", JSON.stringify(cartItem));
-    console.log(localStorage.getItem("cart"));
   }, [cartItem]);
 
   const addToCart = (fetchedProduct) => {

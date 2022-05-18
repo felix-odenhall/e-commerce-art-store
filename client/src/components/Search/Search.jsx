@@ -45,8 +45,8 @@ const Search = ({ setQuery, setCategory, category }) => {
   return (
     <>
       <hr className="bg-slate-200 mt-2" />
-      <div className="mx-auto w-full max-w-6xl flex flex-row justify-between items-center px-5 py-4">
-        <div>
+      <div className="mx-auto w-full max-w-6xl flex flex-col sm:flex-row  justify-between items-center px-5 py-4">
+        <div className="py-4 md:py-0">
           <input
             type="checkbox"
             id={categories.environment}

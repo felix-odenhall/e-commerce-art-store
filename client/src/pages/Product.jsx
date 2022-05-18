@@ -24,7 +24,7 @@ const Product = ({
   }, [id]); //eslint-disable-line
   return fetchedProduct ? (
     <main className="flex justify-center items-center flex-col w-full p-4">
-      <img className="w-3/5" src={fetchedProduct.image} alt="" />
+      <img className="shrink-0 shadow-lg" src={fetchedProduct.image} alt="" />
       <div className="flex w-3/5 justify-between items-center py-4">
         <h3 className=" text-2xl">{fetchedProduct.title}</h3>
         <h4 className=" text-xl">${fetchedProduct.price}</h4>
