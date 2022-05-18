@@ -5,7 +5,9 @@ import { useRef, useEffect } from "react";
 const CartComponent = ({
   addToCart,
   removeFromCart,
+  fetchedProduct,
   getCartLs,
+  emptyCart,
   isActive,
   setIsActive,
 }) => {
