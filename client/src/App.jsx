@@ -55,6 +55,7 @@ const App = () => {
   const emptyCart = () => {
     onUpdateCart([]);
   };
+
   const [isActive, setIsActive] = useState(false);
 
   return (

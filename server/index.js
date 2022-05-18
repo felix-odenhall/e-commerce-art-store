@@ -5,7 +5,7 @@ import orderRouter from "./routes/orderRouter.js";
 import adminRouter from "./routes/adminRouter.js";
 import cors from "cors";
 
-const PORT = process.env.PORT || 8090;
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 

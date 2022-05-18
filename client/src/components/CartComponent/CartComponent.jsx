@@ -1,6 +1,7 @@
 import React from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { useRef, useEffect } from "react";
 
 const CartComponent = ({
   addToCart,
@@ -13,8 +14,43 @@ const CartComponent = ({
 }) => {
   const totalPrice = getCartLs.reduce((a, b) => a + b.price * b.amount, 0);
 
+  const ref = useRef();
+
+  useOnClickOutside(ref, () => setIsActive(false));
+
+  function useOnClickOutside(ref, handler) {
+    useEffect(
+      () => {
+        const listener = (event) => {
+          console.log("clicked");
+          // Do nothing if clicking ref's element or descendent elements
+          if (!ref.current || ref.current.contains(event.target)) {
+            console.log("something different");
+            return;
+          }
+          handler(event);
+        };
+        document.addEventListener("mousedown", listener);
+        document.addEventListener("touchstart", listener);
+        return () => {
+          document.removeEventListener("mousedown", listener);
+          document.removeEventListener("touchstart", listener);
+        };
+      },
+      // Add ref and handler to effect dependencies
+      // It's worth noting that because passed in handler is a new ...
+      // ... function on every render that will cause this effect ...
+      // ... callback/cleanup to run every render. It's not a big deal ...
+      // ... but to optimize you can wrap handler in useCallback before ...
+      // ... passing it into this hook.
+      [ref, handler]
+    );
+  }
   return (
-    <div className="flex flex-col top-6 right-1 bg-slate-100  absolute lg:top-24 lg:right-36 h-auto w-56 px-2 pt-3 pb-5 rounded-md shadow">
+    <div
+      ref={ref}
+      className="flex flex-col top-6 right-1 bg-slate-100  absolute lg:top-24 lg:right-36 h-auto w-56 px-2 pt-3 pb-5 rounded-md shadow"
+    >
       <div className="flex justify-between items-center pb-4">
         <h3 className=" text-2xl font-semibold ">Your items:</h3>{" "}
         <button
