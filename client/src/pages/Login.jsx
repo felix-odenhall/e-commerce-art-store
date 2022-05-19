@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import * as config from '../Config';
-import Admin from './Admin';
+import { useState } from "react";
+import * as config from "../Config";
+import Admin from "./Admin";
 
 const Login = () => {
   const [loginDetails, setLoginDetails] = useState({
-    user: '',
-    password: '',
+    user: "",
+    password: "",
   });
 
   const [isAuth, setIsAuth] = useState(false);
@@ -21,14 +21,14 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!user || !password) {
-      alert('You need to enter a Username and a Password');
+      alert("You need to enter a Username and a Password");
       return;
     }
     fetch(`${config.API_BASE_URL}/login`, {
-      method: 'POST',
+      method: "POST",
       body: JSON.stringify({ password, user, isAdmin: true }),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
     })
       .then((response) => {
@@ -46,11 +46,15 @@ const Login = () => {
   return isAuth ? (
     <Admin />
   ) : (
-    <section className="flex justify-center mt-6">
-      <form onSubmit={handleSubmit}>
+    <section className="flex flex-col justify-center items-center mt-6">
+      <h3 className="font-bold text-lg mb-4">Login as Admin</h3>
+      <form
+        className="flex flex-col md:felx-row justify-center items-center"
+        onSubmit={handleSubmit}
+      >
         <label htmlFor="Username"></label>
         <input
-          className="rounded p-2 mr-2 bg-slate-200"
+          className="rounded p-2 mb-3 bg-slate-200"
           onChange={handleOnChange}
           type="text"
           id="user"
@@ -59,7 +63,7 @@ const Login = () => {
           value={user}
         />
         <input
-          className="rounded p-2 mr-2 bg-slate-200"
+          className="rounded p-2 mb-4 bg-slate-200"
           onChange={handleOnChange}
           type="password"
           id="password"

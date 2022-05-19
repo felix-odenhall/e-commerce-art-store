@@ -1,4 +1,5 @@
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import CartComponent from "./components/CartComponent/CartComponent";
 import { Home, Product, About, Checkout, Admin, Login } from "./pages";
 import { Routes, Route } from "react-router-dom";
@@ -57,7 +58,7 @@ const App = () => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div>
+    <div className=" h-screen">
       <Header
         getCartLs={getCartLs}
         isActive={isActive}
@@ -99,6 +100,7 @@ const App = () => {
         />
         <Route path="/admin" element={<Admin />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
