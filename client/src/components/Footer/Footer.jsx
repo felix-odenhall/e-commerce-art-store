@@ -1,7 +1,6 @@
 import React from "react";
 import { RiAdminLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { AiOutlineShopping } from "react-icons/ai";
 
 const Footer = () => {
   return (
