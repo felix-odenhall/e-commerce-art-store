@@ -1,19 +1,20 @@
-To start the application:
-1. Navigate to client
-2. ```npm start```
+## To start the application:
+1. ```cd client```
+2. ```npm install```
+3. ```npm start```
 
-Brief: Build a complete e-commerce website - develop the frontend client in a technology of our choice, setting up a database in MongoDb, and creating a RESTful API to connect the two.
+**Brief:**
+Build a complete e-commerce website - develop the frontend client in a technology of our choice, setting up a database in MongoDb, and creating a RESTful API to connect the two.
 
-Timeframe: Three weeks.
+**Timeframe:** Three weeks.
 
-Description: I created a digital art webshop app in React. I decided to include common functions for e-commerce apps, like: search/filtering functions, add to cart and a checkout function.
+**Description:** 
+I created a digital art webshop app in React. I decided to include common functions for e-commerce apps, like: search/filtering functions, add to cart and a checkout function.
 I also added an login/admin page to handle the orders and mark them as shipped.
 
-This was my first React project.
+### Key Learnings:
 
-Key Learnings:
-
-JS/React:
+**JS/React:**
 
   How to work with different components, 
   
@@ -25,7 +26,7 @@ JS/React:
   
   How to use Fetch requests to access DB data via an API using endpoints.
 
-MongoDB:
+**MongoDB:**
 
   Setting up a MongoDB database.
 
@@ -33,7 +34,7 @@ MongoDB:
   
   Formatting queries to search and filter data.
   
-REST APIs:
+**REST APIs:**
 
   How to build a RESTful API from the ground up.
   
@@ -41,7 +42,7 @@ REST APIs:
   
   How to use CRUD operators (POST, GET, DELETE etc.) to store, retrieve and manipulate data in the DB.
   
- Tailwindcss
+**Tailwindcss**
  
  Sample database document:
  
