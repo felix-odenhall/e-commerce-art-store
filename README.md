@@ -3,6 +3,8 @@
 2. ```npm install```
 3. ```npm start```
 
+https://felix-art-store.netlify.app/
+
 **Brief:**
 Build a complete e-commerce website - develop the frontend client in a technology of our choice, setting up a database in MongoDb, and creating a RESTful API to connect the two.
 
